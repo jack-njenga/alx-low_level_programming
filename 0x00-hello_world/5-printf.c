@@ -1,6 +1,10 @@
-#include <stdio.h>
+#include <srdio.h>
+/**
+ * main Prints a line with puts funct
+ * Return: 0
+ */
 int main(void)
-{
-printf("with proper grammar, but the outcome is a piece of art,\n");
+{ 
+put("\"Programming is like building a multiligual puzzle");
 return (0);
 }
