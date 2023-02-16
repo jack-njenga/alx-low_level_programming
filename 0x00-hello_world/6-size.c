@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /** 
  * main - Prints size of data type
  * Return: (0)
