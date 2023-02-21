@@ -1,9 +1,9 @@
-#include <stdio.h>
+#include "main.h"
 /* print _putchar */
 /* Return 0 */
-int main()
+int main(void)
 {
 	printf("_putchar");
 
-	return(0);
+	return (0);
 }
