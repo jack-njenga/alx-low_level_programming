@@ -1,4 +1,5 @@
 #include "main.h"
+void insert_spaces(int k);
 
 /**
  * print_diagonal - draws a diagonal line on the terminal
