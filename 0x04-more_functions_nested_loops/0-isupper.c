@@ -1,4 +1,4 @@
-#incude "main.h"
+#include "main.h"
 
 /**
  * _isupper - checks for uppercase
@@ -6,6 +6,8 @@
  *
  * Return: 1 if c is uppercase, otherwise 0
  */
+
+int _isupper(int c);
 
 int _isupper(int c)
 {
