@@ -9,9 +9,9 @@ void print_numbers(void);
 
 void print_numbers(void)
 {
-	int a;
+	char a;
 
-	for (a = 0, a < 10, a++)
+	for (a = 0; a < 10; a++)
 	{
 		_putchar(a);
 		_putchar('\n');
