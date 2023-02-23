@@ -2,11 +2,11 @@
 
 /**
  * print_diagonal - draws a diagonal line on the terminal
- * @n: integer
- * Return: void
+ * @n: an integer
+ *
+ * Return: returns void
  */
 
-void spaces(int a);
 void print_diagonal(int n);
 
 void print_diagonal(int n)
@@ -31,14 +31,15 @@ void print_diagonal(int n)
 
 /**
  * insert_spaces - insert empty spaces
- * @a: integer
- * Return: void
+ * @k: an integer
+ *
+ * Return: returns void
  */
-void spaces(int a)
+void insert_spaces(int k)
 {
 	int s;
 
-	for (s = 0; s < a; s++)
+	for (s = 0; s < k; s++)
 	{
 		_putchar(' ');
 	}
