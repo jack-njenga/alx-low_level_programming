@@ -9,7 +9,7 @@
 
 int _isupper(int c);
 
-int _isupper(viod)
+int _isupper(int c)
 {
 	int c
 
