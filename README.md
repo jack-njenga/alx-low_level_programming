@@ -1,3 +1,2 @@
 #!/bin/bash
-introduction to c programming
-
+Introduction to c programming.
