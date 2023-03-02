@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include "7-leet.c"
 
 int main(void)
 {
