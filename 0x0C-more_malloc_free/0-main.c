@@ -19,7 +19,7 @@ int main(void)
     printf("for char c: %p\n", (void *)c);
     i = malloc_checked(sizeof(int) * 402);
     printf("for int i: %p\n", (void *)i);
-    f = malloc_checked(sizeof(float) * 100000000);
+    f = malloc_checked(sizeof(float) * 1000000000);
     printf("for float f: %p\n", (void *)f);
     d = malloc_checked(INT_MAX);
     printf("for double d: %p\n", (void *)d);
