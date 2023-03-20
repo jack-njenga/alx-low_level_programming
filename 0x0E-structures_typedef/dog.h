@@ -6,6 +6,8 @@
  * @age:age of the dog
  * @owner: the dogs master
  */
+void init_dog(struct dog *d, char *name, float age, char *owner);
+
 struct dog
 {
 	char *name;
