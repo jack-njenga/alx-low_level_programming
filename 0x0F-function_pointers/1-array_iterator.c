@@ -3,7 +3,7 @@
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	size_t i;
+	unsigned int i;
 
 	if (array == NULL || action == NULL)
 	{
