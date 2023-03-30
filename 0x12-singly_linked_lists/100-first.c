@@ -1,16 +1,10 @@
-#include <lists.h>
-
+#include <stdio.h>
 /**
-* print_before_main - prints "You're beat!..." before main function is executed
-*
-* Description: This function prints the message "You're beat!..." before the
-* main function is executed.
-*
-* Return: void
-*/
-void print_before_main(void) __attribute__((constructor));
-void print_before_main(void)
+ * before_main - prints a string before main() is called
+ * Return: void
+ */
+void __attribute__((constructor)) before_main()
 {
-printf("You're beat! and yet, you must allow,\n"
-"I bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow\n");
+	printf("I bore my house upon my back!\n");
 }

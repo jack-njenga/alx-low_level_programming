@@ -7,6 +7,8 @@
  *
  * Return: NULL or address to the new node
  */
+int _strlen(const char *s);
+
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new, *current;
