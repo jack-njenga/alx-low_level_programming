@@ -4,15 +4,18 @@
  * @h: pointer to the linked list to print
  * Return: the number of nodes
  */
-size_t print_list(const list_t *h);
+size_t print_list(const list_t *h)
 {
-	int n = 0;
+	size_t count = 0;
 
-	if (h.str == NULL)
+	while (h != NULL)
 	{
-		printf("[%d] %s\n", 0, "(nil)");
+		if (h->str == NULL)
+			printf("[0] (nil)\n");
+		else
+			printf("[%d] %s\n", h->len, h->str);
+		h = h->next;
+		count++;
 	}
-	else
-	n += printf("[%d] %s\n", h.len, h.str);
-	return (n);
+	return (count);
 }
