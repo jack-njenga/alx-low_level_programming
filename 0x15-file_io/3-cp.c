@@ -5,22 +5,18 @@
  * @argv: argument vector
  * Return: 1 if success else on error
  */
+char *create_buffer(char *file);
 int main(int argc, char *argv[])
 {
 	int fd_f, fd_t, r, w, c1, c2;
-	char *buff;
+	char *buff, *str;
 
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	buff = malloc(sizeof(char) * 1024);
-	if (buff == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+	buff = create_buffer(argv[2]);
 	fd_f = open(argv[1], O_RDONLY);
 	r = read(fd_f, buff, 1024);
 	if (fd_f == -1 || r == -1)
@@ -47,7 +43,25 @@ int main(int argc, char *argv[])
 	c2 = close(fd_t);
 	if (c1 == -1 || c2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (c1 == -1) ? fd_f : fd_t);
+		str = "Error: Can't close fd";
+		dprintf(STDERR_FILENO, "%s %d\n", str, (c1 == -1) ? fd_f : fd_t);
 	}
 	return (0);
+}
+/**
+ * create_buffer - Allocates 1024 bytes for a buffer
+ * @file: The name of the file buffer
+ * Return: A pointer to the newly-allocated buffer
+ */
+char *create_buffer(char *file)
+{
+	char *buff;
+
+	buff = malloc(sizeof(char) * 1024);
+	if (buff == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+		exit(99);
+	}
+	return (buff);
 }
