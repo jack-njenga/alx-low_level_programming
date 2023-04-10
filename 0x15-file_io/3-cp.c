@@ -20,21 +20,21 @@ int main(int argc, char *argv[])
 	buff = create_buffer(argv[2]);
 	fd_f = open(argv[1], O_RDONLY);
 	r = read(fd_f, buff, 1024);
+	if (fd_f == -1 || r == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		free(buff);
+		exit(98);
+	}
 	fd_t = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	w = write(fd_t, buff, r);
+	if (fd_t == -1 || w == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		free(buff);
+		exit(99);
+	}
 	do {
-		if (fd_f == -1 || r == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			free(buff);
-			exit(98);
-		}
-		w = write(fd_t, buff, r);
-		if (fd_t == -1 || w == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			free(buff);
-			exit(99);
-		}
 		r = read(fd_f, buff, 1024);
 		fd_t = open(argv[2], O_WRONLY | O_APPEND);
 	} while (r > 0);
