@@ -39,8 +39,8 @@ int main(int argc, char *argv[])
 		fd_t = open(argv[2], O_WRONLY | O_APPEND);
 	} while (r > 0);
 	free(buff);
-	close(fd_f);
-	close(fd_t);
+	close_file(fd_f);
+	close_file(fd_t);
 
 	return (0);
 }
