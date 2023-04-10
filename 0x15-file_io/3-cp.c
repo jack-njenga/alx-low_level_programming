@@ -1,15 +1,16 @@
 #include "main.h"
+char *create_buffer(char *file);
+void close_file(int fd);
 /**
  * main -  a program that copies the content of a file to another file.
  * @argc: argument counter
  * @argv: argument vector
  * Return: 1 if success else on error
  */
-char *create_buffer(char *file);
 int main(int argc, char *argv[])
 {
-	int fd_f, fd_t, r, w, c1, c2;
-	char *buff, *str;
+	int fd_f, fd_t, r, w;
+	char *buff;
 
 	if (argc != 3)
 	{
@@ -39,13 +40,9 @@ int main(int argc, char *argv[])
 		fd_t = open(argv[2], O_WRONLY, O_APPEND);
 	} while (r > 0);
 	free(buff);
-	c1 = close(fd_f);
-	c2 = close(fd_t);
-	if (c1 == -1 || c2 == -1)
-	{
-		str = "Error: Can't close fd";
-		dprintf(STDERR_FILENO, "%s %d\n", str, (c1 == -1) ? fd_f : fd_t);
-	}
+	close(fd_f);
+	close(fd_t);
+
 	return (0);
 }
 /**
@@ -64,4 +61,20 @@ char *create_buffer(char *file)
 		exit(99);
 	}
 	return (buff);
+}
+/**
+ * close_file - function for closing a file
+ * @fd: file descriptor to close
+ * Return: void
+ */
+void close_file(int fd)
+{
+	int d;
+
+	d = close(fd);
+	if (d == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
 }
