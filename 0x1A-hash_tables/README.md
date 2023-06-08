@@ -60,7 +60,7 @@ typedef struct hash_table_s
 - [x] 1-djb2.c - Write a hash function implementing the djb2 algorithm.
 
 - Prototype: unsigned long int hash_djb2(const unsigned char *str);
-- You are allowed to copy and paste the function from [this page](https://gist.github.com/papamuziko/7bb52dfbb859fdffc4bd0f95b76f71e8) 
+- You are allowed to copy and paste the function from [this page](https://gist.github.com/papamuziko/7bb52dfbb859fdffc4bd0f95b76f71e8)
 
 - [x] 2-key_index.c - Write a function that gives you the index of a key.
 
@@ -99,7 +99,7 @@ typedef struct hash_table_s
 - [x] 6-hash_table_delete.c - Write a function that deletes a hash table.
 
 - Prototype: void hash_table_delete(hash_table_t *ht);
-- where ht is the hash table 
+- where ht is the hash table
 
 - [ ] 100-sorted_hash_table.c - In PHP, hash tables are ordered. Wait… WAT? How is this even possible?
 ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/5ebbea5dea5a575b38243d597604000715982925.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230608%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230608T121348Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=969e4be30ee09f1a8f46465f4af470cd704c3a7575e908c27e70aea389dfd2b4)
@@ -114,4 +114,3 @@ For this task, please:
 ![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/253/php.png)
 
 ### endif
-
