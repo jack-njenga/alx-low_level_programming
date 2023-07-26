@@ -1,5 +1,4 @@
 CC = gcc
-FLAGS = -Wall -Wetra -Werror -pedantic -stdgnu=89
 
 all: school
 
